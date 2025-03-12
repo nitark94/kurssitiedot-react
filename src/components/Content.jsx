@@ -1,11 +1,11 @@
 import React from 'react';
-import Part from './Part'; // Tuodaan Part-komponentti
+import Part from './Part';
 
 const Content = ({ parts }) => {
   return (
     <div>
       {parts.map(part => (
-        <Part key={part.id} part={part} />  {/* Renderöidään osat Part-komponentilla */}
+        <Part key={part.id} part={part} />
       ))}
     </div>
   );

@@ -1,12 +1,13 @@
 import React from 'react';
-import Header from './Header'; // Tuodaan Header-komponentti
-import Content from './Content'; // Tuodaan Content-komponentti
+import Header from '../components/Header';
+import Content from '../components/Content';
+
 
 const Course = ({ course }) => {
   return (
     <div>
-      <Header course={course} />   {/* Kurssin nimen renderöinti */}
-      <Content parts={course.parts} />   {/* Kurssin osien renderöinti */}
+      <Header course={course} />
+      <Content parts={course.parts} />
     </div>
   );
 };
