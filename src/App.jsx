@@ -1,57 +1,34 @@
-// App.jsx
+import React from 'react';
+import Course from './components/Course'; // Tuodaan Course-komponentti
+
 const App = () => {
   const course = {
-  
-  name: 'Half Stack application development',
-  const: parts = [
-    {
-    name: 'Fundamentals of React',
-    exercises : 10
-  },
-  {
-    name: 'Using props to pass data',
-    exercises : 7
-},
-{
-  name: 'State of a component',
-  exercises : 14
+    name: 'Half Stack application development',
+    id: 1,
+    parts: [
+      {
+        name: 'Fundamentals of React',
+        exercises: 10,
+        id: 1
+      },
+      {
+        name: 'Using props to pass data',
+        exercises: 7,
+        id: 2
+      },
+      {
+        name: 'State of a component',
+        exercises: 14,
+        id: 3
+      }
+    ]
   }
-  ]
-}
 
   return (
     <div>
-      <Header course={course} />
-      <Content parts={parts}/>
-      <Total parts={parts}/>
+      <Course course={course} />
     </div>
   )
 }
 
-// Header-komponentti
-const Header = (props) => {
-  return <h1>{props.course}</h1>
-}
-
-// Content-komponentti
-const Content = (props) => {
-  return (
-    <div>
-      {props.parts.map((part, index) => (
-        <Part key={index} name={part.name} exercises={part.exercises} />
-      ))}
-    </div>
-  )
-}
-
-// Part-komponentti
-const Part = (props) => {
-  return <p>{props.name} {props.exercises}</p>
-}
-
-// Total-komponentti
-const Total = (props) => {
-  return <p>Number of exercises {props.parts[0].exercises + props.parts[1].exercises + props.parts[2].exercises}</p>
-}
-
-export default App
+export default App;
