@@ -1,4 +1,19 @@
-import Course from './components/Course.jsx';
+import React from 'react';
+
+const Course = ({ course }) => {
+  return (
+    <div>
+      <h1>{course.name}</h1>
+      <ul>
+        {course.parts.map(part => (
+          <li key={part.id}>
+            {part.name} {part.exercises}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
 
 const App = () => {
   const course = {
@@ -11,7 +26,10 @@ const App = () => {
     ]
   };
 
-const totalExercises = course.parts.reduce((sum, part) => sum + part.exercises, 0);
+  const totalExercises = course.parts.reduce((sum, part) => {
+    console.log('what is happening', sum, part);
+    return sum + part.exercises;
+  }, 0);
 
   return (
     <div>
@@ -22,5 +40,6 @@ const totalExercises = course.parts.reduce((sum, part) => sum + part.exercises, 
 };
 
 export default App;
+
 
 
